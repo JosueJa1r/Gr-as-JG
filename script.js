@@ -279,3 +279,44 @@ animateElements.forEach(el => {
     el.classList.add('scroll-animate');
     observer.observe(el);
 });
+
+// Catálogo de servicios desplegable
+const serviceCards = document.querySelectorAll('.service-card');
+const serviceToggles = document.querySelectorAll('.service-toggle');
+
+serviceToggles.forEach((toggle, index) => {
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const card = serviceCards[index];
+        const isExpanded = card.classList.contains('expanded');
+        
+        // Cerrar todas las tarjetas
+        serviceCards.forEach(c => {
+            c.classList.remove('expanded');
+            const btn = c.querySelector('.service-toggle');
+            if (btn) btn.textContent = 'Ver más +';
+        });
+        
+        // Si no estaba expandida, expandirla
+        if (!isExpanded) {
+            card.classList.add('expanded');
+            toggle.textContent = 'Ver menos';
+            
+            // Scroll suave a la tarjeta expandida
+            setTimeout(() => {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+    });
+});
+
+// Cerrar tarjeta al hacer clic fuera
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.service-card')) {
+        serviceCards.forEach(card => {
+            card.classList.remove('expanded');
+            const btn = card.querySelector('.service-toggle');
+            if (btn) btn.textContent = 'Ver más +';
+        });
+    }
+});
