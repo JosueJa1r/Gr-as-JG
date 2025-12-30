@@ -28,7 +28,8 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%);
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 1.1rem;
     position: relative;
 }
 
@@ -99,31 +100,34 @@ body::before {
 
 .logo h1 {
     color: var(--neon-blue);
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 3px;
     text-shadow: 
-        0 0 10px var(--neon-blue),
-        0 0 20px var(--neon-blue),
+        0 0 15px var(--neon-blue),
         0 0 30px var(--neon-blue),
-        0 0 40px var(--neon-blue);
+        0 0 45px var(--neon-blue),
+        0 0 60px var(--neon-blue),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
     animation: neonPulse 2s ease-in-out infinite;
 }
 
 @keyframes neonPulse {
     0%, 100% {
         text-shadow: 
-            0 0 10px var(--neon-blue),
-            0 0 20px var(--neon-blue),
-            0 0 30px var(--neon-blue);
+            0 0 15px var(--neon-blue),
+            0 0 30px var(--neon-blue),
+            0 0 45px var(--neon-blue),
+            2px 2px 4px rgba(0, 0, 0, 0.8);
     }
     50% {
         text-shadow: 
-            0 0 20px var(--neon-blue),
-            0 0 30px var(--neon-blue),
-            0 0 40px var(--neon-blue),
-            0 0 50px var(--neon-blue);
+            0 0 25px var(--neon-blue),
+            0 0 45px var(--neon-blue),
+            0 0 65px var(--neon-blue),
+            0 0 85px rgba(0, 255, 255, 0.7),
+            2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 }
 
@@ -262,18 +266,18 @@ body::before {
 }
 
 .hero-content h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 3px;
     background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink), var(--neon-purple));
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: neonGradient 3s linear infinite;
-    filter: drop-shadow(0 0 20px var(--neon-blue)) drop-shadow(0 0 40px var(--neon-pink));
+    filter: drop-shadow(0 0 25px var(--neon-blue)) drop-shadow(0 0 50px var(--neon-pink));
 }
 
 @keyframes neonGradient {
@@ -282,9 +286,12 @@ body::before {
 }
 
 .hero-content p {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     margin-bottom: 2rem;
-    font-weight: 300;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
 }
 
 .hero-image-container {
@@ -394,8 +401,8 @@ body::before {
 
 .slogan h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3.2rem;
+    font-weight: 800;
     background: linear-gradient(45deg, var(--accent-color), #0066ff, var(--accent-color));
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -407,6 +414,8 @@ body::before {
     padding: 0 40px;
     animation: gradientShift 4s ease infinite, pulse 2s ease-in-out infinite;
     text-shadow: 0 0 30px rgba(0, 51, 188, 0.3);
+    filter: drop-shadow(0 0 25px rgba(0, 255, 255, 0.8)) drop-shadow(0 0 50px rgba(255, 0, 110, 0.6));
+    letter-spacing: 2px;
 }
 
 .slogan h2::before,
@@ -595,17 +604,40 @@ body::before {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3.2rem;
     color: var(--neon-blue);
     margin-bottom: 50px;
     position: relative;
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 3px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     text-shadow: 
-        0 0 10px var(--neon-blue),
-        0 0 20px var(--neon-blue),
-        0 0 30px var(--neon-blue);
+        0 0 15px var(--neon-blue),
+        0 0 30px var(--neon-blue),
+        0 0 45px var(--neon-blue),
+        0 0 60px rgba(0, 255, 255, 0.7),
+        3px 3px 6px rgba(0, 0, 0, 0.9);
+    animation: sectionTitleGlow 3s ease-in-out infinite;
+}
+
+@keyframes sectionTitleGlow {
+    0%, 100% {
+        text-shadow: 
+            0 0 15px var(--neon-blue),
+            0 0 30px var(--neon-blue),
+            0 0 45px var(--neon-blue),
+            0 0 60px rgba(0, 255, 255, 0.7),
+            3px 3px 6px rgba(0, 0, 0, 0.9);
+    }
+    50% {
+        text-shadow: 
+            0 0 25px var(--neon-blue),
+            0 0 50px var(--neon-blue),
+            0 0 75px var(--neon-blue),
+            0 0 100px rgba(0, 255, 255, 0.9),
+            3px 3px 6px rgba(0, 0, 0, 0.9);
+    }
 }
 
 .section-title::after {
@@ -679,15 +711,33 @@ body::before {
 .service-card h3 {
     color: var(--neon-blue);
     margin-bottom: 15px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    text-shadow: 0 0 10px var(--neon-blue);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 0 20px var(--neon-blue),
+        0 0 40px rgba(0, 255, 255, 0.8),
+        2px 2px 4px rgba(0, 0, 0, 0.9);
+    transition: var(--transition);
+}
+
+.service-card:hover h3 {
+    color: var(--neon-pink);
+    text-shadow: 
+        0 0 30px var(--neon-pink),
+        0 0 60px var(--neon-pink),
+        2px 2px 4px rgba(0, 0, 0, 0.9);
+    transform: scale(1.08);
 }
 
 .service-card p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    line-height: 1.7;
 }
 
 .service-image-container {
@@ -933,10 +983,11 @@ body::before {
 .contact-form h3 {
     color: var(--neon-purple);
     margin-bottom: 30px;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    text-shadow: 0 0 15px var(--neon-purple);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px var(--neon-purple), 0 0 40px rgba(185, 103, 255, 0.7);
 }
 
 .info-item {
@@ -954,11 +1005,16 @@ body::before {
 .info-item h4 {
     color: var(--neon-blue);
     margin-bottom: 5px;
-    text-shadow: 0 0 5px var(--neon-blue);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
 .info-item p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 /* Formulario */
